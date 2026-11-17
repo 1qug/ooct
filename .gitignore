@@ -1,0 +1,34 @@
+# ===== Visual Studio =====
+.vs/
+*.vsidx
+*.VC.db
+*.VC.VC.opendb
+*.user
+*.suo
+
+# ===== Qt Creator =====
+.qtcreator/
+*.autosave
+
+# ===== clangd 缓存 =====
+.clangd/
+.cache/
+
+# ===== 构建输出 =====
+build/
+debug/
+release/
+*.obj
+*.pdb
+*.ilk
+*.exe
+*.dll
+*.lib
+*.exp
+*.tlog
+
+# ===== 安装包输出 =====
+installer_output/
+
+# ===== Qt uic 生成文件（见下方说明）=====
+ui_*.h

@@ -1,0 +1,14 @@
+					交接文档
+1.具体的代码：
+	坐标系：VisionWidget.cpp-》CreateCoordinateTransform
+	模型：VisionWidget.cpp-》loadSTLDataFromfile
+	毛坯：stlmodelloader.cpp-》loadSTLModel
+	
+	总入口：stl_slicer.cpp-》generateContoursOnly
+	切片：stl_slicer.cpp-》generateContoursOnly-》sliceAtZ
+	偏置：stl_slicer.cpp-》generateContoursOnly
+	连接内外轮廓：object_occt_view.cpp-》drawLayeredPath
+	白点：object_occt_view.cpp-》displayAllContourPoints
+	文本：object_occt_view.cpp-》drawContourGroups
+	螺旋线：object_occt_view.cpp-》drawSpiralPath
+	

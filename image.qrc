@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resource/icon/title/shutdown_pressed.png</file>
+        <file>resource/images/加工机械.png</file>
+        <file>resource/images/Settings/axis.png</file>
+        <file>resource/images/Settings/cutting.png</file>
+        <file>resource/images/Settings/down.png</file>
+        <file>resource/images/Settings/scrisshair.png</file>
+        <file>resource/images/Settings/stock.png</file>
+        <file>resource/images/Settings/up.png</file>
+    </qresource>
+    <qresource prefix="/new/prefix1">
+        <file>resource/icon/servo.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,20 @@
+					交接文档
+1.具体的代码：
+	坐标系：VisionWidget.cpp-》CreateCoordinateTransform         参数：const GlobalMachiningData::Coordinate& coord （坐标系数据）
+	模型：VisionWidget.cpp-》loadSTLDataFromfile                 参数：GlobalMachiningData::MachiningParams &params  （弹窗选择的参数数据）
+	毛坯：stlmodelloader.cpp-》loadSTLModel                      参数：const std::string& filepath（模型路径）, std::shared_ptr<DetectedObject> blanktemp（毛坯数据）,float spacing（距顶面位置）  
+	
+	总入口：stl_slicer.cpp-》generateContoursOnly                 无参数
+	切片：stl_slicer.cpp-》generateContoursOnly-》sliceAtZ        参数：double z（z轴坐标）
+	偏置：stl_slicer.cpp-》generateContoursOnly                   无参数
+	连接内外轮廓：object_occt_view.cpp-》drawLayeredPath           参数：const std::vector<MaxIncircleInfo>& outerCircles（外轮廓数据）,const std::vector<MaxIncircleInfo>& innerCircles（外轮廓数据）
+									,const gp_Trsf& transform（坐标系数据）,double safeZ（安全高度）,
+									double maxDirectDist（最大连接阈值）,const std::map<int, int>& contourIdToGroupId（contourId -> groupId 映射）
+	白点：object_occt_view.cpp-》displayAllContourPoints         参数：const ContourGroups& groups（轮廓分组数据）,const gp_Trsf& transform（坐标系数据）
+	文本：object_occt_view.cpp-》drawContourGroups               参数：const ContourGroups& groups（轮廓分组数据）,
+                                       					const std::shared_ptr<DetectedObject>& obj（毛坯数据）,
+                                       					const gp_Trsf& coordTransform（坐标系数据）,
+                                          				const std::vector<MaxIncircleInfo>* incircleInfo（外轮廓数据）
+	螺旋线：object_occt_view.cpp-》drawSpiralPath                参数：const gp_Pnt& from（坐标系起点数据）, const gp_Pnt& to（坐标系终点数据）,
+                                    					 const gp_Pnt& fromCenter（坐标系中心数据）, const gp_Pnt& toCenter（坐标系旋转数据）,
+                                    					 double helixAngleDeg（螺旋升角（度））, double helixRadius（半径）
